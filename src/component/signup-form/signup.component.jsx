@@ -5,7 +5,7 @@ import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
 } from "../../utills/firebase/firebase.utills";
-
+import { Link } from "react-router-dom";
 import Button from "../button/button.componet";
 
 const defaultFormFields = {
@@ -59,6 +59,18 @@ const SignUp = () => {
     <div className="signup-container">
       <h2> User SignUp </h2>
       <span>Please fill the form below with your Details</span>
+
+      <div className="breakline">
+        <div className="or"></div>
+
+        <div className="onediv">
+          <hr />
+        </div>
+        <div className="twodiv">
+          <hr />
+        </div>
+      </div>
+
       <form onSubmit={HandleSubmit}>
         <FormInput
           label="Display Name"
@@ -95,8 +107,12 @@ const SignUp = () => {
           name="confirmPassword"
           value={confirmPassword}
         />
-
-        <Button buttonType="google">Sign Up</Button>
+        <div className="link-button ">
+          <Button buttonType="google">Sign Up</Button>
+          <Link to="/auth">
+            <span className="signup-link"> Sign in with exiting account </span>
+          </Link>
+        </div>
       </form>
     </div>
   );
