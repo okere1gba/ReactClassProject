@@ -2,9 +2,10 @@ import { useState } from "react";
 import FormInput from "../forms/form.component";
 import {
   signInWithGooglepopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from "../../utills/firebase/firebase.utills";
+
+//import { UserContext } from "../context/context.user";
 
 import Button from "../button/button.componet";
 import "./justsiginin.form.scss";
@@ -18,6 +19,9 @@ const SigningIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  // useContext implementation to help manage our states in the sign up form
+
+  //const { setCurrentUser } = useContext(UserContext);
   // Handles and keeps track of the changes as the user is type inside the text formField
 
   const handleChange = (event) => {
@@ -35,11 +39,8 @@ const SigningIn = () => {
     // make sure that the password and the confirm password are thesame
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      console.log(response);
+      await signInAuthUserWithEmailAndPassword(email, password);
+
       resetForms();
     } catch (error) {
       switch (error.code) {
@@ -62,8 +63,7 @@ const SigningIn = () => {
     }*/
   };
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglepopup();
-    await createUserDocumentFromAuth(user);
+    await signInWithGooglepopup();
   };
   return (
     <div className="singin-container">

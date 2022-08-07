@@ -3,6 +3,7 @@ import Home from "./routes/home/home.component";
 import Navigation from "./routes/navigation/navigation.component";
 //import SignIn from "./routes/authentication/authenication.comp";
 import SignInPage from "./routes/authentication/authenication.comp";
+import Shop from "./routes/shop/shop.component";
 /*const Navigation = () => {
   return (
     <div>
@@ -13,9 +14,6 @@ import SignInPage from "./routes/authentication/authenication.comp";
     </div>
   );
 };*/
-const Shop = () => {
-  return <h1> Checkout this websites </h1>;
-};
 
 const App = () => {
   return (
