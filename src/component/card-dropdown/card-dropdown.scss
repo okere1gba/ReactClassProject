@@ -2,6 +2,7 @@
   position: absolute;
   width: 240px;
   height: 340px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -24,6 +25,7 @@
   }
 
   button {
-    margin-top: auto;
+    margin-top: 12px;
+    border: 2px solid red;
   }
 }
