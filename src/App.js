@@ -4,6 +4,7 @@ import Navigation from "./routes/navigation/navigation.component";
 //import SignIn from "./routes/authentication/authenication.comp";
 import SignInPage from "./routes/authentication/authenication.comp";
 import Shop from "./routes/shop/shop.component";
+import Chackout from "./routes/chackout/chack-out-component";
 /*const Navigation = () => {
   return (
     <div>
@@ -22,6 +23,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="shop" element={<Shop />} />
         <Route path="auth" element={<SignInPage />} />
+        <Route path="chackout" element={<Chackout />} />
       </Route>
     </Routes>
   );
